@@ -1,0 +1,46 @@
+[bit_run] 10:11:53 INFO: Running on host eselicl22119
+[bit_run] 10:11:53 INFO: Starting itc
+[bit_run] 10:11:54 INFO: Starting Consul, id=1, name=agent-1
+[bit_run] 10:11:56 INFO: Starting BIT [valgrind --tool=memcheck --error-exitcode=42 --suppressions=/local/repo/config_fwk/fwk/test/bit/valgrind_filters/config_memcheck.txt --suppressions=/local/repo/config_fwk/test_deployment/config/test/bit/valgrind_filters/sys_service_memcheck.txt --log-file=software_module_factory.valgrind.memcheck.log --leak-check=full --track-origins=yes --error-exitcode=1 --gen-suppressions=all /local/repo/config_fwk/alfred-out/x86_64-wrs-linux-bit/bin/softwareModuleFactory] in /local/repo/config_fwk/alfred-out/x86_64-wrs-linux-bit/bin
+Running main() from gmock_main.cc
+[==========] Running 4 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 4 tests from SoftwareModuleFactoryTest
+[ RUN      ] SoftwareModuleFactoryTest.CreateSoftwareModuleFactory
+[       OK ] SoftwareModuleFactoryTest.CreateSoftwareModuleFactory (352 ms)
+[ RUN      ] SoftwareModuleFactoryTest.CreateSoftwareModuleFactory2
+Correct JSON string: {
+  "test":{
+    "ptr":"0x8d220d0",
+    "softwareModuleFactories":{
+      "config::server::ServiceStub":"0x8c54918",
+      "config::server::SingletonStub":"0x8c546b8",
+      "config::server::DependencyStub1":"0x8c54c18",
+      "config::server::DependencyStub2":"0x8c54a98",
+      "casper_r3::Engine":"0x8c54cf8"
+    },
+    "interfaceImpementers":{
+      "config::server::Interface1":"config::server::SingletonStub",
+      "config::server::Interface2":"config::server::SingletonStub"
+    },
+    "instances":{
+      "config::server::ServiceStub":"0x8d25d08",
+      "config::server::SingletonStub":"0x8d25c18",
+      "config::server::DependencyStub1":"0x8d22db8",
+      "config::server::DependencyStub2":"0x8d22cd8",
+      "casper_r3::Engine":"0x8d24938"
+    }
+  }
+}
+[       OK ] SoftwareModuleFactoryTest.CreateSoftwareModuleFactory2 (168 ms)
+[ RUN      ] SoftwareModuleFactoryTest.SingletonStub
+[       OK ] SoftwareModuleFactoryTest.SingletonStub (65 ms)
+[ RUN      ] SoftwareModuleFactoryTest.Get_SingletonStub_instance_by_one_of_the_implemented_interfaces
+[       OK ] SoftwareModuleFactoryTest.Get_SingletonStub_instance_by_one_of_the_implemented_interfaces (68 ms)
+[----------] 4 tests from SoftwareModuleFactoryTest (674 ms total)
+
+[----------] Global test environment tear-down
+[==========] 4 tests from 1 test case ran. (737 ms total)
+[  PASSED  ] 4 tests.
+[bit_run] 10:12:02 INFO: Stopping itc with user id 40761
+[bit_run] 10:12:03 INFO: Stopping Consul, id=1, name=agent-1
